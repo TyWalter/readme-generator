@@ -7,54 +7,54 @@ const questions = (callback) => inquirer.prompt([
     name: 'title'
   },
   {
-    type: 'textarea',
+    type: 'input',
     message: 'What is the decription of this README?',
     name: 'description'
   },
   {
-    type: 'textarea',
+    type: 'input',
     message: 'List out the table of contents of this README?',
     name: 'content'
   },
   {
-    type: 'textarea',
+    type: 'input',
     message: 'How do you install this README?',
     name: 'install'
   },
   {
-    type: 'textarea',
+    type: 'input',
     message: 'How is this README meant to be used?',
     name: 'usage'
   },
   {
     type: 'list',
-    message: 'Are there any licenses for this README?',
+    message: 'What license would you like for this README?',
     name: 'license',
-    choices: ["Apache 2.0", "GNU General Public v3.0", "MIT", "BSD 2-Clause 'Simplified'", "BSD 3-Clause 'New' or 'Revised'", "Boost Software v1.0","Creative Commons Zero v1.0", "Eclipse Public v2.0", "GNU Affero General Public v3.0", "GNU General Public v2.1", "Mozilla Public v2.0"]
+    choices: ["No License", "Apache 2.0", "Boost Software v1.0", "BSD 2-Clause 'Simplified'", "BSD 3-Clause 'New' or 'Revised'", "Creative Commons Zero v1.0", "Eclipse Public v2.0", "GNU Affero General Public v3.0", "GNU General Public v3.0", "MIT", "Mozilla Public v2.0"]
   },
   {
-    type: 'textarea',
-    message: 'List out the contributions for this README',
+    type: 'input',
+    message: 'What are the contribution guidelines for this README?',
     name: 'contribution'
   },
   {
-    type: 'textarea',
-    message: 'What test guidelines do you want to include in this README?',
+    type: 'input',
+    message: 'What test instructions do you want to include in this README?',
     name: 'test'
   },
   {
-    type: 'textarea',
-    message: 'How should someone contact you if they have questions about the README?',
-    name: 'question'
+    type: 'input',
+    message: 'What is your GitHub username?',
+    name: 'username'
+  },
+  {
+    type: 'input',
+    message: 'What is your email address?',
+    name: 'email'
   }
-]).then(({title, description, content, install, usage, license, contribution, test, question}) => {
-  const result = 
-  callback(result)
+]).then((resp) => {
+  callback(resp);
 });
-
-
-
-
 
 module.exports = {
   questions
