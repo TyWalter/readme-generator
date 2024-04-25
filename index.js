@@ -1,4 +1,3 @@
-// TODO: Include packages needed for this application
 
 // TODO: Create an array of questions for user input
 const questions = [];
@@ -11,3 +10,8 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+
+
+const {makeLog} = require("./utils/log")
+const {questions} = require("./utils/questions")
