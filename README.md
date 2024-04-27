@@ -4,8 +4,6 @@ This is a homework assignment where I had to create a README generator.
 ## Description
 This README generator creates a README2.md file from a series of questions asked using the inquirer package through the termial and creates a professional README.
 
-[Here is the link](https://tywalter.github.io/readme-generator/) to the deployed website.
-
 ## Visuals 
 * ![Here is a screenshot](./utils/images/screenshot.png) Here is a screenshot of the created README2.md
 
