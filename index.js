@@ -75,7 +75,7 @@ ${link}
 function renderLicenseBadge(license) {
   switch(license){
     case "No License":
-      return "";
+      return "No License Chosen";
     case "Apache 2.0":
       return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
     case "Boost Software v1.0":
@@ -103,7 +103,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   switch(license){
     case "No License":
-      return "";
+      return "No License Was Chosen For This Application";
     case "Apache 2.0":
       return `Your application is covered under the [${license}](https://opensource.org/licenses/Apache-2.0) license.`;
     case "Boost Software v1.0":
@@ -129,7 +129,7 @@ function renderLicenseLink(license) {
 
 // Generates a markdown file called README.md and will overwrite previous README.md files
 function generateMarkdown(data) {
-  makeLog("README.md", data);
+  makeLog("README2.md", data);
 };
 
 // Takes the answers from the prompts and runs the handleResponses function
