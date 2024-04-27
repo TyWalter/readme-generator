@@ -6,37 +6,70 @@ const handleResponses = (resp) => {
   const badge = renderLicenseBadge(resp.license);
   const link = renderLicenseLink(resp.license);
   const git = `https://github.com/${resp.username}`;
-  const email = resp.email;
   const readme = 
-`# ${resp.title} 
+`
+<a id="title"></a>
+# ${resp.title} 
 
-## Badges
-${badge}
+<a id="badge"></a>
+## Badges ${badge}
 
+<a id="toc"></a>
+## Table of Contents
+* [Table of Contents](#toc)
+
+* [Title](#title)
+
+* [Badges](#badge)
+
+* [Description](#desc)
+
+* [Usage Guidelines](#usage)
+
+* [Intallation Guidelines](#install)
+
+* [How To Test](#test)
+
+* [Contributions](#cont)
+
+* [Questions](#question)
+
+* [License](#license)
+
+<a id="desc"></a>
 ## Description
-    ${resp.description}
+${resp.description}
 
-## Visuals
+<a id="usage"></a>
+## Usage Guidelines
+    ${resp.usage}
 
-## Installation
+<a id="install"></a>
+## Installation Guidelines
+    ${resp.install}
 
-## Usage
+<a id="test"></a>
+## How To Test
+    ${resp.test}
 
+<a id="cont"></a>
 ## Contributions
+${resp.cont}
 
+<a id="question"></a>
 ## Questions
 If you have any questions about this README
+
 you can reach me: *${git}*
 
-or by email: *${email}*
+or by email: *${resp.email}*
 
+<a id="license"></a>
 ## License
 ${link}
-
 `;
   generateMarkdown(readme);
 };
-
 
 function renderLicenseBadge(license) {
   switch(license){
@@ -92,20 +125,8 @@ function renderLicenseLink(license) {
   };
 };
 
-
 function generateMarkdown(data) {
   makeLog("README.md", data);
 };
 
 questions(handleResponses);
-
-
-["No License", "Apache 2.0", "Boost Software v1.0", "BSD 2-Clause 'Simplified'", "BSD 3-Clause 'New' or 'Revised'", "Creative Commons Zero v1.0", "Eclipse Public v2.0", "GNU Affero General Public v3.0", "GNU General Public v3.0", "MIT", "Mozilla Public v2.0"]
-
-
-// WHEN I choose a License for my application from a list of options
-
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-
-
-
