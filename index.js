@@ -1,7 +1,7 @@
 const {makeLog} = require("./utils/log");
 const {questions} = require("./utils/questions");
 
-
+// Takes the answers to the previously asked questions and formats them into a new markdown file. This creates only 1 copy of markdown and if new questions are answered, the previous markdown file will be overwritten
 const handleResponses = (resp) => {
   const badge = renderLicenseBadge(resp.license);
   const link = renderLicenseLink(resp.license);
@@ -16,11 +16,11 @@ const handleResponses = (resp) => {
 
 <a id="toc"></a>
 ## Table of Contents
-* [Table of Contents](#toc)
-
 * [Title](#title)
 
 * [Badges](#badge)
+
+* [Table of Contents](#toc)
 
 * [Description](#desc)
 
@@ -28,7 +28,7 @@ const handleResponses = (resp) => {
 
 * [Intallation Guidelines](#install)
 
-* [How To Test](#test)
+* [Test Instructions](#test)
 
 * [Contributions](#cont)
 
@@ -49,7 +49,7 @@ ${resp.description}
     ${resp.install}
 
 <a id="test"></a>
-## How To Test
+## Test Instructions
     ${resp.test}
 
 <a id="cont"></a>
@@ -62,7 +62,7 @@ If you have any questions about this README
 
 you can reach me: *${git}*
 
-or by email: *${resp.email}*
+or by sending me an e-mail at: *${resp.email}*
 
 <a id="license"></a>
 ## License
@@ -71,6 +71,7 @@ ${link}
   generateMarkdown(readme);
 };
 
+// Takes whichever license was selected and returns a badge
 function renderLicenseBadge(license) {
   switch(license){
     case "No License":
@@ -98,6 +99,7 @@ function renderLicenseBadge(license) {
   };
 };
 
+// Takes whichever license was selected creates a clickable link to that licenses' webpage for further detail
 function renderLicenseLink(license) {
   switch(license){
     case "No License":
@@ -125,8 +127,10 @@ function renderLicenseLink(license) {
   };
 };
 
+// Generates a markdown file called README.md and will overwrite previous README.md files
 function generateMarkdown(data) {
   makeLog("README.md", data);
 };
 
+// Takes the answers from the prompts and runs the handleResponses function
 questions(handleResponses);
